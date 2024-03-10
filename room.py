@@ -314,7 +314,7 @@ if and_tags or or_tags or exclude_tags:
      compare_summary_df_output(category3_origin_summary_df, compare_category3_origin_summary_df,
                                ['日期范围', 'impression', 'cost', 'click', 'conversions', 'ads value', 'GMV', 'UV',
                                 'AddtoCart', 'saleuser', 'sale', '神策ROI', 'ads ROI', 'ads CPA', 'CPC', 'CTR',
-                                '神策转化率', '神策加购率'])
+                                '神策转化率', '神策加购率','客单价'])
 
 else:
     # 选择日期范围内的数据
@@ -521,4 +521,4 @@ else:
         compare_category3_origin_summary_df = compare_category3_origin_summary_df[compare_category3_origin_summary_df['room'].isin(category3_options)].drop(columns=['room'])
 
         compare_summary_df_output(category3_origin_summary_df, compare_category3_origin_summary_df,['日期范围', 'impression', 'cost', 'click', 'conversions', 'ads value', 'GMV', 'UV',
-        'AddtoCart', 'saleuser', 'sale', '神策ROI', 'ads ROI', 'ads CPA', 'CPC', 'CTR', '神策转化率','神策加购率'])
+        'AddtoCart', 'saleuser', 'sale', '神策ROI', 'ads ROI', 'ads CPA', 'CPC', 'CTR', '神策转化率','神策加购率','客单价'])
