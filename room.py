@@ -243,7 +243,7 @@ if and_tags or or_tags or exclude_tags:
      summary_df = add_custom_proportion_to_df_x100(summary_df, 'click', 'impression', 'CTR')
      summary_df = add_custom_proportion_to_df_x100(summary_df, 'sale', 'UV', '神策转化率')
      summary_df = add_custom_proportion_to_df_x100(summary_df, 'AddtoCart', 'UV', '神策加购率')
-     summary_df = add_custom_proportion_to_df_x100(summary_df, 'GMV', 'saleuser', '客单价')
+     summary_df = add_custom_proportion_to_df(summary_df, 'GMV', 'saleuser', '客单价')
      compare_summary_df = output_groupby_df(compare_summary_df, ['日期范围'],
                                             ['impression', 'cost', 'click', 'conversions', 'ads value', 'GMV', 'UV',
                                              'AddtoCart', 'saleuser', 'sale'], 'sum').reset_index()
@@ -254,7 +254,7 @@ if and_tags or or_tags or exclude_tags:
      compare_summary_df = add_custom_proportion_to_df_x100(compare_summary_df, 'click', 'impression', 'CTR')
      compare_summary_df = add_custom_proportion_to_df_x100(compare_summary_df, 'sale', 'UV', '神策转化率')
      compare_summary_df = add_custom_proportion_to_df_x100(compare_summary_df, 'AddtoCart', 'UV', '神策加购率')
-     compare_summary_df = add_custom_proportion_to_df_x100(compare_summary_df, 'GMV', 'saleuser', '客单价')
+     compare_summary_df = add_custom_proportion_to_df(compare_summary_df, 'GMV', 'saleuser', '客单价')
      combined_df = create_compare_summary_df(summary_df, compare_summary_df, select_column)
      formatted_df = combined_df.head(2).copy()
      formatted_df[['sale', 'saleuser', 'UV', 'AddtoCart', 'impression', 'click']] = formatted_df[
@@ -466,7 +466,7 @@ else:
         summary_df = add_custom_proportion_to_df_x100(summary_df, 'click', 'impression', 'CTR')
         summary_df = add_custom_proportion_to_df_x100(summary_df, 'sale', 'UV', '神策转化率')
         summary_df = add_custom_proportion_to_df_x100(summary_df, 'AddtoCart', 'UV', '神策加购率')
-        summary_df = add_custom_proportion_to_df_x100(summary_df, 'GMV', 'saleuser', '客单价')
+        summary_df = add_custom_proportion_to_df(summary_df, 'GMV', 'saleuser', '客单价')
         compare_summary_df = output_groupby_df(compare_summary_df,['日期范围'],
         ['impression', 'cost', 'click', 'conversions', 'ads value', 'GMV', 'UV', 'AddtoCart','saleuser', 'sale'], 'sum').reset_index()
         compare_summary_df = add_custom_proportion_to_df(compare_summary_df, 'GMV', 'cost', '神策ROI')
@@ -476,7 +476,7 @@ else:
         compare_summary_df = add_custom_proportion_to_df_x100(compare_summary_df, 'click', 'impression', 'CTR')
         compare_summary_df = add_custom_proportion_to_df_x100(compare_summary_df, 'sale', 'UV', '神策转化率')
         compare_summary_df = add_custom_proportion_to_df_x100(compare_summary_df, 'AddtoCart', 'UV', '神策加购率')
-        compare_summary_df = add_custom_proportion_to_df_x100(compare_summary_df, 'GMV', 'saleuser', '客单价')
+        compare_summary_df = add_custom_proportion_to_df(compare_summary_df, 'GMV', 'saleuser', '客单价')
         combined_df = create_compare_summary_df(summary_df,compare_summary_df,select_column)
         formatted_df = combined_df.head(2).copy()
         formatted_df[['sale', 'saleuser', 'UV', 'AddtoCart', 'impression','click']] = formatted_df[['sale', 'saleuser', 'UV', 'AddtoCart', 'impression','click']].astype(int)
